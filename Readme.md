@@ -14,7 +14,7 @@ We'll be using the AWS Management Console ([https://aws.amazon.com/console/](htt
 * A NAT gateway
 * A Endpoints
 
-![cover](images/image_1.png)
+![cover](assets/image_1.png)
 
 # Tutorial Contents
 
@@ -38,7 +38,7 @@ We'll be using the AWS Management Console ([https://aws.amazon.com/console/](htt
    * `IPv6 CIDR block`: select No IPv6 CIDR block
    * `Tenancy`: Default
 
-![Create VPC](images/image_4.png)
+![Create VPC](assets/image_4.png)
 
 > **Check sidebar** after create a new VPC (the id like vpc-0d1a683b1e975baed)
 > * **Subnet**: no new subnet
@@ -63,7 +63,7 @@ The custom VPC wizard doesn't create any subnet, so you must manually create the
    * `Availability Zone`: ap-southeast-2a
    * `IPv4 CIDR block`:10.0.1.0/24
 
-![Create VPC](images/image_3.png)
+![Create VPC](assets/image_3.png)
 
 > **VPC ID**
 > Select your VPC. This is the VPC we created in the [Step 1](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#1.-create-vpc). In here and the following steps, I will abbreviate my VPC, i.e. vpc-0d1a683b1e975baed(My VPC).
@@ -85,7 +85,7 @@ Create the second subnet and entering the following inormation:
 * `Availability Zone`: ap-southeast-2b
 * `IPv4 CIDR block`:10.0.2.0/24
 
-![Create VPC](images/image(10).png)
+![Create VPC](assets/image(10).png)
 
 # Step 3: Add Internet Gateway
 
@@ -100,7 +100,7 @@ The following describes how to manually create a ~~public~~ subnet and attach an
    * Click **Attach to VPC**
      * `Available VPCs`：'vpc-0d1a683b1e975baed(My VPC)'
 
-![Create VPC](images/image(12).png)
+![Create VPC](assets/image(12).png)
 
 > * An Internet gateway only attch a specific VPC, and a VPC only attach an internet gateway.
 > * Build Internet gateway doesn't mean that you can access internet, instead you need to check Route Tables.
@@ -135,7 +135,7 @@ When you create the VPC, Amazon automatically associate it with the main route t
 1. On the **Subnet associations** tab, choose **Edit subnet associations** in **Explicit subnet assocaitons** window, select the check box for the subnet will become a public subnet.
    * `Select subnet: 10.0.1.0-ap-southeast-2a`
 
-![Create VPC](images/image(5).png)
+![Create VPC](assets/image(5).png)
 
 # Step 5: Enable public subnet to access the internet
 
@@ -144,7 +144,7 @@ When you create the VPC, Amazon automatically associate it with the main route t
 3. Click **Action** and Edit **subnet settings**:
    * `Select 'Enable auto-assign public IPv4 address'`
 
-![Enable auto-assign public IPv4 address](images/image(11).png)
+![Enable auto-assign public IPv4 address](assets/image(11).png)
 
 # Step 6: Enable private subnet to access the internet
 
@@ -206,7 +206,7 @@ Open a command prompt or shell
 # Are you sure you want to continue connecting (yes/no/[fingerprint])? 
 % yes
 ```
-![Create VPC](images/image(9).png)
+![Create VPC](assets/image(9).png)
 
 ```powershell
 # Run "sudo yum update" to apply all updates
@@ -242,7 +242,7 @@ $ exit
 % sudo yum update
 ```
 
-![Create VPC](images/image(7).png)
+![Create VPC](assets/image(7).png)
 
 # Step 8 : Control traffic to public subnet with Network ACLs (Optional Step)
 
@@ -324,7 +324,7 @@ $ service httpd start
 
 2. Test your server
 
-![Create VPC](images/image.png)
+![Create VPC](assets/image.png)
 
 ## Filter traffic passing from the network to the local
 
@@ -338,11 +338,11 @@ Change the inbound rules of the Network ACLs can controlling traffic from the ne
      * **`Source`**: 0.0.0.0/0
      * **`Allow/Deny`**: Deny
 
-![Create VPC](images/image(8).png)
+![Create VPC](assets/image(8).png)
 
 3. Access to the public IP Address again.
 
-![Create VPC](images/image(6).png)
+![Create VPC](assets/image(6).png)
 
 > **Rule number**
 > 
