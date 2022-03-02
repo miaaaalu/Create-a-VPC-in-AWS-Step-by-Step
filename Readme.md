@@ -17,17 +17,16 @@ We'll be using the AWS Management Console ([https://aws.amazon.com/console/](htt
 ![cover](assets/image_1.png)
 
 # Tutorial Contents
-
-* [Step 1: Create a new VPC](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-1-create-a-new-vpc)
-* [Step 2: Add subnets](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-2-add-subnets)
-* [Step 3: Add Internet Gateway](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-3-add-internet-gateway)
-* [Step 4: Add Route table for public subnet](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-4-add-route-table-for-public-subnet)
-* [Step 5: Enable public subnet to access the internet](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-5-enable-public-subnet-to-access-the-internet)
-* [Step 6: Enable private subnet to access the internet](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-6-enable-private-subnet-to-access-the-internet)
-* [Step 7: Validate VPC Connection on MAC OS](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-7-validate-vpc-connection-on-mac-os)
-* [Step 8 : Control traffic to public subnet with Network ACLs](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-8-control-traffic-to-public-subnet-with-network-acls-optional-step) (Optional Step)
-* [Step 9: Accessing S3 from a private subnet](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-9-accessing-s3-from-a-private-subnet-optional-step) (Optional Step)
-* [Step 10. Remove everything from AWS (Clean up)](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#step-10.-remove-everything-from-aws-clean-up)
+* [Step 1: Create a new VPC](#step-1-create-a-new-vpc)
+* [Step 2: Add subnets](#step-2-add-subnets)
+* [Step 3: Add Internet Gateway](#step-3-add-internet-gateway)
+* [Step 4: Add Route table for public subnet](#step-4-add-route-table-for-public-subnet)
+* [Step 5: Enable public subnet to access the internet](#step-5-enable-public-subnet-to-access-the-internet)
+* [Step 6: Enable private subnet to access the internet](#step-6-enable-private-subnet-to-access-the-internet)
+* [Step 7: Validate VPC Connection on MAC OS](#step-7-validate-vpc-connection-on-mac-os)
+* [Step 8 : Control traffic to public subnet with Network ACLs](#step-8-control-traffic-to-public-subnet-with-network-acls-optional-step) (Optional Step)
+* [Step 9: Accessing S3 from a private subnet](#step-9-accessing-s3-from-a-private-subnet-optional-step) (Optional Step)
+* [Step 10. Remove everything from AWS (Clean up)](#step-10-remove-everything-from-aws-clean-up)
 
 # Step 1: Create a new VPC
 1. Open the Amazon VPC console at [https://console.aws.amazon.com/vpc/](https://console.aws.amazon.com/vpc/)
@@ -66,7 +65,7 @@ The custom VPC wizard doesn't create any subnet, so you must manually create the
 ![Create VPC](assets/image_3.png)
 
 > **VPC ID**
-> Select your VPC. This is the VPC we created in the [Step 1](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#1.-create-vpc). In here and the following steps, I will abbreviate my VPC, i.e. vpc-0d1a683b1e975baed(My VPC).
+> Select your VPC. This is the VPC we created in the [Step 1](#1.-create-vpc). In here and the following steps, I will abbreviate my VPC, i.e. vpc-0d1a683b1e975baed(My VPC).
 > 
 > **Availability Zone**
 > 
@@ -354,7 +353,7 @@ Change the inbound rules of the Network ACLs can controlling traffic from the ne
 
 ## Preparation
 
-* If you ran the above testing - [Control traffic to public subnet with Network ACLs](how-to-create-a-vpc-in-aws-step-by-step-tutorial.md#testing-control-traffic-to-subnet-with-network-acls), please attach the public subnet (10.0.1.0-ap-southeast-2a) to the default Network ACLs by MyVPC, other wise the private EC2 Instance is unable access to test S3 bucket.
+* If you ran the above testing - [Control traffic to public subnet with Network ACLs](#testing-control-traffic-to-subnet-with-network-acls), please attach the public subnet (10.0.1.0-ap-southeast-2a) to the default Network ACLs by MyVPC, other wise the private EC2 Instance is unable access to test S3 bucket.
   1. In the navigation pane of VPC console, choose **Network ACLs**.
   2. Select the **default Network ACL** generated when your custom VPC was created, instead of the custom network ACL.
   3. Select **Subnet associations** tab in the Network ACLs details pane, then **Edit**
